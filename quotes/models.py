@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ModelForm
 
 # Create your models here.
 class Quote(models.Model):
@@ -17,3 +18,7 @@ class Quote(models.Model):
 
     def __unicode__(self):
         return self.message
+
+class QuoteForm(ModelForm):
+    class Meta:
+        model = Quote
