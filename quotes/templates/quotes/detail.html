@@ -1,5 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Quote by {{ quote.name }}{% endblock %}
+
+{% block content %}
 <h1>Quote {{ quote.id }} </h1>
 <q>{{ quote.message}}
 <span class="author">- {{ quote.name }}, {{ quote.get_program_display }} {{ quote.class_of }}</span></q>
 
 <p><a href={% url 'quotes:update' quote.id %}>Edit</a> | <a href={% url 'quotes:delete' quote.id %}>Delete</a> | <a href={% url 'quotes:index' %}>List all</a></p>
+{% endblock %}
