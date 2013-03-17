@@ -1,7 +1,7 @@
 {% if latest_quote_list %}
     <ul>
     {% for quote in latest_quote_list %}
-        <li><a href="/quotes/{{ quote.id }}/">{{ quote.message }}</a></li>
+    <li><a href="{% url 'quotes:detail' quote.id %}">{{ quote.message }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

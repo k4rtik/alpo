@@ -5,7 +5,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^quotes/', include('quotes.urls')),
+    url(r'^quotes/', include('quotes.urls', namespace='quotes')),
     # Examples:
     # url(r'^$', 'alpo.views.home', name='home'),
     # url(r'^alpo/', include('alpo.foo.urls')),
