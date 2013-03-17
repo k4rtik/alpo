@@ -1,0 +1,6 @@
+<form action="" method="POST">
+    {% csrf_token %}
+    Are you sure you want to delete?
+    <p><input type="submit" value="Yes" /></p>
+    <p><a href={% url 'quotes:index' %}>No</a></p>
+</form>

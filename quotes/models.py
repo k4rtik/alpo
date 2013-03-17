@@ -1,7 +1,6 @@
+from django.core.urlresolvers import reverse
 from django.db import models
-from django.forms import ModelForm
 
-# Create your models here.
 class Quote(models.Model):
     message = models.TextField()
     name = models.CharField(max_length=100)
@@ -19,6 +18,5 @@ class Quote(models.Model):
     def __unicode__(self):
         return self.message
 
-class QuoteForm(ModelForm):
-    class Meta:
-        model = Quote
+    def get_absolute_url(self):
+        return reverse('quotes:detail', kwargs={'pk': self.pk})
